@@ -3,10 +3,25 @@ import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
+// import { Resend } from 'resend';
 
 
 function NavBar({ className }: { className?: string }) {
     const [active, setActive] = useState<string | null>(null);
+
+    // const resend = new Resend('re_EdgBJEv3_7VMQy1dBoGj15UHmYALQeqoA');
+
+    // let i = 0;
+
+    // const sendEmail = () => {
+    //     resend.emails.send({
+    //         from: 'onboarding@resend.dev',
+    //         to: 'saitejakm2001@gmail.com',
+    //         subject: 'Hello World',
+    //         html: `<p>Congrats on sending your <strong>email no ${i++}</strong>!</p>`
+    //     });
+    // }
+
     return (
         <div className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}>
             <Menu setActive={setActive}>
@@ -23,9 +38,9 @@ function NavBar({ className }: { className?: string }) {
                         <HoveredLink href="/courses"> Music Production </HoveredLink>
                     </div>
                 </MenuItem>
-                <Link href={"/contact"}>
-                    <MenuItem setActive={setActive} active={active} item="Contact Us">
-                        test
+                <Link href={"/courses"}>
+                    <MenuItem setActive={setActive} active={active} item="Contact Us" >
+                        {/* <button onClick={sendEmail}>Contact Us</button> {i} */}
                     </MenuItem>
                 </Link>
             </Menu>
